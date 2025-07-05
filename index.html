@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Drop Event</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+          rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        body {background-color: rgb(255, 217, 78);}
+        p {font-size:large;
+           color: rgba(208, 70, 70, 0.647);}
+        h1 {font-family: "omelette";
+            color: purple;}
+        button {margin: 5px;
+                padding: 8px;
+                font-size: large;
+                background-color:rgb(86, 217, 86);
+                color:rgb(255,255,255);}
+    </style>
+</head>
+<body>
+    <hr>
+    <h1>
+        Welcome to my website for the Boba Drop Event!
+    </h1>
+    <p>
+        You might be wondering why I am here, so here's a list:
+    </p>
+    <ul>
+        <li>My friend recommended it to me</li>
+        <li>I heard about the free <b style = "color:red;">Boba</b></li>
+        <li>I was curious if there was something I could learn from this</li>
+    </ul>
+    <p style = "color:navy;">Since I already know a bit of web development, please enjoy some entertainment</p><br> 
+    <br><hr><hr><hr><br>
+    <div style = "text-align:center;">
+        <button type = "button;" onclick = openDisplay()>Open</button>
+        <button type = "button;" onclick = hideDisplay()>Close</button>
+    </div>
+    <iframe src = "https://www.youtube.com/embed/paWE-GvDO1c?si=8yLDGE7hzlhZtNha" style = "width:0px;height:0px;border:0px solid silver;" id = "ytIframe"></iframe>
+    <canvas id = "youtubeCanvas" width = "1480" height = "800" style = "border:5px solid silver"></canvas>
+
+    <script>
+        var youtube = document.getElementById("youtubeCanvas");
+        var youtubeCtx = youtube.getContext("2d");
+        var canvasYoutube = youtubeCtx.createRadialGradient(800,400,600,700,400,1000);
+        canvasYoutube.addColorStop(0,"pink");
+        canvasYoutube.addColorStop(1,"black");
+        youtubeCtx.fillStyle = canvasYoutube;
+        youtubeCtx.fillRect(0,0,1480,800);
+
+        function openDisplay(){
+            document.getElementById("ytIframe").style.width = "1490px";
+            document.getElementById("ytIframe").style.height = "800px";
+            document.getElementById("ytIframe").style.border = "5px solid silver";
+            document.getElementById("youtubeCanvas").style.width = "0px";
+            document.getElementById("youtubeCanvas").style.height = "0px";
+            document.getElementById("youtubeCanvas").style.border = "0px";
+        }
+        function hideDisplay(){
+            document.getElementById("ytIframe").style.width = "0px";
+            document.getElementById("ytIframe").style.height = "0px";
+            document.getElementById("ytIframe").style.border = "0px";
+            document.getElementById("youtubeCanvas").style.width = "1490px";
+            document.getElementById("youtubeCanvas").style.height = "800px";
+            document.getElementById("youtubeCanvas").style.border = "5px solid silver";
+        }
+    </script>
+
+    
+</body>
+</html>
